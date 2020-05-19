@@ -328,12 +328,6 @@ Node::remove_on_set_parameters_callback(const OnSetParametersCallbackHandle * co
   return node_parameters_->remove_on_set_parameters_callback(callback);
 }
 
-rclcpp::Node::OnParametersSetCallbackType
-Node::set_on_parameters_set_callback(rclcpp::Node::OnParametersSetCallbackType callback)
-{
-  return node_parameters_->set_on_parameters_set_callback(callback);
-}
-
 std::vector<std::string>
 Node::get_node_names() const
 {

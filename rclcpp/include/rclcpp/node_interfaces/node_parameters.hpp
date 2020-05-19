@@ -168,10 +168,6 @@ public:
   remove_on_set_parameters_callback(const OnSetParametersCallbackHandle * const handler) override;
 
   RCLCPP_PUBLIC
-  OnParametersSetCallbackType
-  set_on_parameters_set_callback(OnParametersSetCallbackType callback) override;
-
-  RCLCPP_PUBLIC
   const std::map<std::string, rclcpp::ParameterValue> &
   get_parameter_overrides() const override;
 

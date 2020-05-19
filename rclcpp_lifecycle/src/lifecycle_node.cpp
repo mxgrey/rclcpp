@@ -255,10 +255,10 @@ LifecycleNode::list_parameters(
   return node_parameters_->list_parameters(prefixes, depth);
 }
 
-rclcpp::Node::OnParametersSetCallbackType
-LifecycleNode::set_on_parameters_set_callback(rclcpp::Node::OnParametersSetCallbackType callback)
+rclcpp::Node::OnSetParametersCallbackHandle::SharedPtr
+LifecycleNode::add_on_set_parameters_callback(rclcpp::Node::OnParametersSetCallbackType callback)
 {
-  return node_parameters_->set_on_parameters_set_callback(callback);
+  return node_parameters_->add_on_set_parameters_callback(callback);
 }
 
 std::vector<std::string>

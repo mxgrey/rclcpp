@@ -452,12 +452,21 @@ public:
 
   /// Register a callback to be called anytime a parameter is about to be changed.
   /**
-   * \sa rclcpp::Node::set_on_parameters_set_callback
+   * \sa rclcpp::Node::add_on_set_parameters_callback
    */
   RCLCPP_LIFECYCLE_PUBLIC
-  rclcpp_lifecycle::LifecycleNode::OnParametersSetCallbackType
-  set_on_parameters_set_callback(
+  rclcpp_lifecycle::LifecycleNode::OnSetParametersCallbackHandle::SharedPtr
+  add_on_set_parameters_callback(
     rclcpp_lifecycle::LifecycleNode::OnParametersSetCallbackType callback);
+
+  /// Register a callback to be called anytime a parameter is about to be changed.
+  /**
+   * \sa rclcpp::Node::remove_on_set_parameters_callback
+   */
+  RCLCPP_LIFECYCLE_PUBLIC
+  void
+  remove_on_set_parameters_callback(
+    const rclcpp_lifecycle::LifecycleNode::OnSetParametersCallbackHandle * const handler);
 
   /// Return a vector of existing node names (string).
   /**
