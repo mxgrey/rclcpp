@@ -187,7 +187,7 @@ public:
         group->find_waitable_ptrs_if(
           [this](const rclcpp::Waitable::SharedPtr & waitable) {
             waitable_handles_.push_back(waitable);
-            return false;
+            return true;
           });
       }
     }
