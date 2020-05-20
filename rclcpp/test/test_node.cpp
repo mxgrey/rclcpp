@@ -366,7 +366,7 @@ TEST_F(TestNode, declare_parameter_with_no_initial_values) {
         }
         return result;
       };
-    EXPECT_EQ(node->remove_on_set_parameters_callback(on_set_parameters), nullptr);
+    EXPECT_EQ(node->add_on_set_parameters_callback(on_set_parameters), nullptr);
     EXPECT_THROW(
       {node->declare_parameter<std::string>(name, "not an int");},
       rclcpp::exceptions::InvalidParameterValueException);
@@ -565,7 +565,7 @@ TEST_F(TestNode, declare_parameter_with_overrides) {
         }
         return result;
       };
-    EXPECT_EQ(node->remove_on_set_parameters_callback(on_set_parameters), nullptr);
+    EXPECT_EQ(node->add_on_set_parameters_callback(on_set_parameters), nullptr);
     EXPECT_THROW(
       {node->declare_parameter<int>(name, 43);},
       rclcpp::exceptions::InvalidParameterValueException);
